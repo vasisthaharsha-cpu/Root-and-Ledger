@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Root &amp; Ledger — NEET Biology Companion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <nav id="topnav">
+        <div class="brand" onclick="go('intro')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2C7 6 4 10 4 14a8 8 0 0016 0c0-4-3-8-8-12z" />
+            </svg>
+            Root &amp; Ledger
+        </div>
+        <div class="nav-links">
+            <span class="streak-pill" id="nav-streak">🔥 0 day streak</span>
+            <button class="nav-btn" onclick="go('syllabus')">Syllabus</button>
+        </div>
+    </nav>
+
+    <!-- =========================================================
+     PAGE 1 — INTRO
+     ========================================================= -->
+    <div id="page-intro">
+        <main>
+            <div class="hero">
+                <div class="eyebrow">A daily companion for NEET Biology</div>
+                <h1>Study the living<br>world, <em>one day</em><br>at a time.</h1>
+                <p class="lede">Clean NCERT-based notes, a full NEET syllabus map, and a quick quiz at the end of every
+                    chapter — so you always know exactly where you left off, and how well you actually learned it.</p>
+                <div class="cta-row">
+                    <button class="btn" onclick="go('syllabus')">Open the syllabus →</button>
+                    <button class="btn outline" onclick="openChapter('living-world')">Jump to Chapter 1</button>
+                </div>
+                <div class="cta-row" style="margin-top:12px;">
+                    <button class="btn outline" onclick="openChapter('biological-classification')">Chapter 2 ·
+                        Biological Classification</button>
+                    <button class="btn outline" onclick="openChapter('cell-unit-of-life')">Chapter 8 · Cell: The Unit of
+                        Life</button>
+                </div>
+
+                <div class="stat-strip">
+                    <div class="stat">
+                        <div class="num">35</div>
+                        <div class="lab">Chapters mapped</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num">03</div>
+                        <div class="lab">Live right now</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num">10</div>
+                        <div class="lab">MCQs per chapter</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num">90</div>
+                        <div class="lab">NEET Biology Qs</div>
+                    </div>
+                </div>
+
+                <div class="tracker-card">
+                    <div class="info">
+                        <h3>Today's study streak</h3>
+                        <p id="tracker-sub">Mark today complete once you've finished reading a chapter.</p>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:18px;">
+                        <div class="flame-count" id="flame-num">0</div>
+                        <button class="btn rust" id="mark-today-btn" onclick="markToday()">Mark today done</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- =========================================================
+     PAGE 2 — SYLLABUS INDEX
+     ========================================================= -->
+    <div id="page-syllabus" hidden>
+        <main>
+            <div class="page-head">
+                <div class="eyebrow">NEET UG · Biology · Botany + Zoology</div>
+                <h2>The Full Syllabus Map</h2>
+                <p class="desc">Every NCERT chapter that feeds into the 90-question Biology section, organised by class.
+                    Tap a chapter to open its notes — we're building these one at a time, starting with Unit 1.</p>
+            </div>
+
+            <div class="tabs">
+                <button class="tab-btn active" id="tab-11" onclick="switchTab(11)">Class XI</button>
+                <button class="tab-btn" id="tab-12" onclick="switchTab(12)">Class XII</button>
+            </div>
+
+            <div id="class11-content"></div>
+            <div id="class12-content" hidden></div>
+
+            <div class="note-box">
+                <b>Note on this list:</b> the NTA has not always published every year's Biology syllabus with
+                chapter-level changes announced early, so this map follows the standard NCERT Class XI–XII chapter set.
+                Always cross-check against the official NTA notification for the exam year you're sitting.
+            </div>
+        </main>
+    </div>
+
+    <!-- =========================================================
+     PAGE 3 — CHAPTER: THE LIVING WORLD
+     ========================================================= -->
+    <div id="page-chapter" hidden>
+        <main>
+            <span class="back-link" onclick="go('syllabus')">← back to syllabus</span>
+
+            <div class="chapter-body" id="chbody-living-world">
+                <div class="chap-hero">
+                    <div class="eyebrow">Unit 1 · Class XI · Chapter 01</div>
+                    <h2>The Living World</h2>
+                    <p class="sub">What makes something "alive," how we name it, and how we sort the sprawling diversity
+                        of
+                        life into order.</p>
+                </div>
+
+                <div class="divider">
+                    <svg viewBox="0 0 180 24">
+                        <path d="M0 12 Q 20 0, 40 12 T 80 12 T 120 12 T 160 12 T 200 12" stroke="#3F5C3A"
+                            stroke-width="2" fill="none" />
+                        <circle cx="40" cy="12" r="3" fill="#B5502E" />
+                        <circle cx="120" cy="12" r="3" fill="#A9862F" />
+                    </svg>
+                </div>
+
+                <section class="notesec" id="s1">
+                    <div class="sec-head"><span class="sec-num">§1</span>
+                        <h3 class="sh">Diversity in the Living World</h3>
+                    </div>
+                    <p>Our planet holds a staggering variety of living organisms — from microscopic bacteria to the blue
+                        whale, from mosses to giant sequoias. This range of variation is called <span
+                            class="term">biodiversity</span>. So far, <b>1.7–1.8 million species</b> have been
+                        identified
+                        and described, but the actual number of species estimated to exist on Earth is far higher — some
+                        estimates run to 8.7 million or more.</p>
+
+                    <figure class="art-figure">
+                        <svg viewBox="0 0 640 160" width="100%">
+                            <rect x="0" y="0" width="640" height="160" fill="#E9E0C7" />
+                            <path d="M40 130 Q80 60 120 130" stroke="#3F5C3A" stroke-width="4" fill="none" />
+                            <ellipse cx="80" cy="55" rx="16" ry="26" fill="#3F5C3A" />
+                            <circle cx="200" cy="100" r="26" fill="#B5502E" opacity="0.85" />
+                            <circle cx="200" cy="100" r="10" fill="#26311F" />
+                            <path d="M230 60 L250 40 L270 60 L250 90 Z" fill="#A9862F" />
+                            <path d="M340 120 q30 -70 60 0 q30 -70 60 0" stroke="#3F5C3A" stroke-width="3"
+                                fill="none" />
+                            <ellipse cx="480" cy="110" rx="40" ry="14" fill="#6f8c62" />
+                            <circle cx="450" cy="105" r="6" fill="#26311F" />
+                            <path d="M540 130 L560 70 L580 130 Z" fill="#3F5C3A" opacity="0.8" />
+                            <path d="M560 70 L560 40" stroke="#3F5C3A" stroke-width="3" />
+                        </svg>
+                        <figcaption>fig. 1 — a small sample of the tree of life: fungi, insect, plant, mollusc, tree
+                            (original line illustration)</figcaption>
+                    </figure>
+
+                    <div class="callout"><b>Nomenclature</b> and <b>identification</b> become impossible without
+                        properly
+                        studying and describing this diversity. Every living organism needs a scientific name that is
+                        recognised the world over.</div>
+                </section>
+
+                <section class="notesec" id="s2">
+                    <div class="sec-head"><span class="sec-num">§2</span>
+                        <h3 class="sh">What Is "Living"?</h3>
+                    </div>
+                    <p>No single defining feature is sufficient on its own — living organisms are best recognised by a
+                        <i>combination</i> of the characteristics below.
+                    </p>
+
+                    <div class="char-row">
+                        <div class="char-icon">01</div>
+                        <div>
+                            <h4 class="sub-h" style="margin-top:0">Growth</h4>
+                            <p>Living organisms grow by an increase in cell number (division) or cell mass. In plants,
+                                growth by cell division continues throughout life at the meristems. Non-living objects
+                                (like
+                                a mountain or a crystal) can also "grow" by accumulation of material on the surface — so
+                                growth alone is not diagnostic of life.</p>
+                        </div>
+                    </div>
+
+                    <div class="char-row">
+                        <div class="char-icon">02</div>
+                        <div>
+                            <h4 class="sub-h" style="margin-top:0">Reproduction</h4>
+                            <p>Organisms reproduce, i.e., give rise to progeny that resemble the parent. Interestingly,
+                                reproduction is <b>not</b> universal — mules, sterile worker bees, and infertile human
+                                couples are alive but do not reproduce. So reproduction, too, is not a defining feature
+                                by
+                                itself.</p>
+                        </div>
+                    </div>
+
+                    <div class="char-row">
+                        <div class="char-icon">03</div>
+                        <div>
+                            <h4 class="sub-h" style="margin-top:0">Metabolism</h4>
+                            <p>All living organisms are made of chemicals which continuously undergo transformation
+                                within
+                                the body — the sum total of these reactions is <span class="term">metabolism</span>, and
+                                it
+                                includes countless biochemical reactions occurring simultaneously in every living cell.
+                                No
+                                non-living object shows metabolism, which makes it the closest thing to a defining,
+                                unique
+                                feature. Metabolism can even be demonstrated <i>in vitro</i>, in cell-free systems —
+                                meaning
+                                isolated metabolic reactions occurring outside the body are <i>not</i> living things,
+                                even
+                                though they are metabolic reactions. This is why cellular organisation is added as a
+                                further
+                                criterion.</p>
+                        </div>
+                    </div>
+
+                    <div class="char-row">
+                        <div class="char-icon">04</div>
+                        <div>
+                            <h4 class="sub-h" style="margin-top:0">Cellular Organisation</h4>
+                            <p>All living organisms show a defined and precise cellular organisation — a fundamental
+                                feature
+                                of every living organism, unicellular or multicellular.</p>
+                        </div>
+                    </div>
+
+                    <div class="char-row">
+                        <div class="char-icon">05</div>
+                        <div>
+                            <h4 class="sub-h" style="margin-top:0">Consciousness / Response to Stimuli</h4>
+                            <p>The ability to sense the environment and respond to physical, chemical, or biological
+                                stimuli
+                                is shown by all living organisms — from single-celled organisms to the most complex
+                                ones. In
+                                multicellular organisms this is achieved through a nervous system. Consciousness is thus
+                                considered the defining property of living organisms.</p>
+                        </div>
+                    </div>
+
+                    <div class="callout"><b>Overall:</b> metabolism and consciousness (response to stimuli), taken
+                        together,
+                        are considered the defining features of life.</div>
+                </section>
+
+                <section class="notesec" id="s3">
+                    <div class="sec-head"><span class="sec-num">§3</span>
+                        <h3 class="sh">Taxonomy &amp; Systematics</h3>
+                    </div>
+                    <p>Classifying organisms requires <span class="term">characterisation</span>, <span
+                            class="term">identification</span>, <span class="term">classification</span>, and <span
+                            class="term">nomenclature</span> — together, these processes form the subject matter of
+                        taxonomy.</p>
+                    <p><b>Systematics</b> comes from the Latin "systema," meaning the systematic arrangement of
+                        organisms —
+                        Linnaeus used <i>Systema Naturae</i> as the title of his own publication. Systematics accounts
+                        not
+                        only for diversity but also for the evolutionary relationships between organisms.</p>
+                </section>
+
+                <section class="notesec" id="s4">
+                    <div class="sec-head"><span class="sec-num">§4</span>
+                        <h3 class="sh">Nomenclature — Naming the Living</h3>
+                    </div>
+                    <p>With millions of plants and animals in the world, every organism needs a scientific name so
+                        people
+                        everywhere, speaking different languages, know exactly which organism is meant.</p>
+
+                    <h4 class="sub-h">Binomial Nomenclature</h4>
+                    <p>Biologists follow a common naming system called <span class="term">binomial nomenclature</span>,
+                        introduced by <b>Carolus Linnaeus</b>. A scientific name has two parts — the <b>generic name</b>
+                        and
+                        the <b>specific epithet</b>. E.g. <i>Mangifera indica</i> (mango): <i>Mangifera</i> is the
+                        genus,
+                        <i>indica</i> the specific epithet.
+                    </p>
+
+                    <h4 class="sub-h">Universal Rules of Nomenclature</h4>
+                    <ul>
+                        <li>Biological names are generally in <b>Latin</b> and written in <i>italics</i> — being
+                            Latinised
+                            or derived from Latin, they're treated as Latin words regardless of origin.</li>
+                        <li>The first word denotes the <b>genus</b>; the second denotes the <b>specific epithet</b>.
+                        </li>
+                        <li>Both words, when handwritten, are separately underlined (or printed in italics) to show
+                            their
+                            Latin origin.</li>
+                        <li>The genus name starts with a <b>capital letter</b>; the specific epithet starts with a
+                            <b>small
+                                letter</b> — e.g. <i>Mangifera indica</i>.</li>
+                        <li>The author's name follows the specific epithet in abbreviated form, e.g. <i>Mangifera
+                                indica</i>
+                            Linn. — showing it was first described by Linnaeus.</li>
+                    </ul>
+                </section>
+
+                <section class="notesec" id="s5">
+                    <div class="sec-head"><span class="sec-num">§5</span>
+                        <h3 class="sh">Taxonomic Categories &amp; Hierarchy</h3>
+                    </div>
+                    <p>Classification is not a single step but a set of hierarchical steps, each representing a rank or
+                        category — hence a <span class="term">taxonomic category</span>. All categories together form
+                        the
+                        <span class="term">taxonomic hierarchy</span>.
+                    </p>
+                    <p>Each unit in the hierarchy is called a <span class="term">taxon</span> (plural: taxa), with a
+                        fixed
+                        position from broadest to narrowest:</p>
+
+                    <div class="ladder">
+                        <div class="rung">
+                            <div class="rank">Kingdom</div>
+                            <div class="eg">the broadest assemblage — organisms sharing very few common features</div>
+                        </div>
+                        <div class="rung">
+                            <div class="rank">Phylum / Division</div>
+                            <div class="eg">animals grouped into phyla; plants into divisions</div>
+                        </div>
+                        <div class="rung">
+                            <div class="rank">Class</div>
+                            <div class="eg">a phylum/division comprising related orders</div>
+                        </div>
+                        <div class="rung">
+                            <div class="rank">Order</div>
+                            <div class="eg">a group of related, though different, families</div>
+                        </div>
+                        <div class="rung">
+                            <div class="rank">Family</div>
+                            <div class="eg">based on aggregates of characters — vegetative &amp; reproductive in plants
+                            </div>
+                        </div>
+                        <div class="rung">
+                            <div class="rank">Genus</div>
+                            <div class="eg">a group of related species with more similarities than species of another
+                                genus
+                            </div>
+                        </div>
+                        <div class="rung">
+                            <div class="rank">Species</div>
+                            <div class="eg">the lowest category — individuals with fundamental similarities, actually or
+                                potentially interbreeding</div>
+                        </div>
+                    </div>
+
+                    <div class="callout"><b>Species</b> is the basic taxonomic category. It refers to a group of
+                        individuals
+                        with fundamental similarities; members show close resemblance compared to members of other
+                        species.
+                        Minor variation exists within a species too — humans show a lot of variation, yet all belong to
+                        one
+                        species, <i>Homo sapiens</i>.</div>
+
+                    <h4 class="sub-h">Worked Examples: Man, Mango, Housefly &amp; Wheat</h4>
+                    <div class="example-grid">
+                        <div class="spec-card">
+                            <h5>Man</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Species</td>
+                                    <td>sapiens</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Genus</td>
+                                    <td>Homo</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Family</td>
+                                    <td>Hominidae</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Order</td>
+                                    <td>Primata</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Class</td>
+                                    <td>Mammalia</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Phylum</td>
+                                    <td>Chordata</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="spec-card">
+                            <h5>Mango</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Species</td>
+                                    <td>indica</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Genus</td>
+                                    <td>Mangifera</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Family</td>
+                                    <td>Anacardiaceae</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Order</td>
+                                    <td>Sapindales</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Class</td>
+                                    <td>Dicotyledonae</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Division</td>
+                                    <td>Angiospermae</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="spec-card">
+                            <h5>Housefly</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Species</td>
+                                    <td>domestica</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Genus</td>
+                                    <td>Musca</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Family</td>
+                                    <td>Muscidae</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Order</td>
+                                    <td>Diptera</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Class</td>
+                                    <td>Insecta</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Phylum</td>
+                                    <td>Arthropoda</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="spec-card">
+                            <h5>Wheat</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Species</td>
+                                    <td>aestivum</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Genus</td>
+                                    <td>Triticum</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Family</td>
+                                    <td>Poaceae</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Order</td>
+                                    <td>Poales</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Class</td>
+                                    <td>Monocotyledonae</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Division</td>
+                                    <td>Angiospermae</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="notesec" id="s6">
+                    <div class="sec-head"><span class="sec-num">§6</span>
+                        <h3 class="sh">Taxonomical Aids</h3>
+                    </div>
+                    <p>Knowledge gained from taxonomic studies is useful in agriculture, forestry, industry, and general
+                        biology — the methods, techniques, and procedures built around this are called <span
+                            class="term">taxonomical aids</span>: ways of preserving material and keeping records.</p>
+
+                    <div class="aid-grid">
+                        <div class="aid-card">
+                            <h5>🌿 Herbarium</h5>
+                            <p>A storehouse of collected plant specimens, dried, pressed, and preserved on sheets,
+                                arranged
+                                by a widely accepted classification system. Each sheet carries a label with date/place
+                                of
+                                collection, name, family, and collector.</p>
+                        </div>
+                        <div class="aid-card">
+                            <h5>🏞️ Botanical Gardens</h5>
+                            <p>Gardens where living plants are grown for reference, each labelled with scientific name
+                                and
+                                family. Famous examples: Royal Botanic Gardens, Kew (England); Indian Botanical Garden,
+                                Howrah.</p>
+                        </div>
+                        <div class="aid-card">
+                            <h5>🏛️ Museum</h5>
+                            <p>Plant and animal specimens are collected, preserved (in preservative solution, or dried),
+                                and
+                                kept for study and reference — animal specimens are sometimes preserved as mounted
+                                skeletons
+                                too.</p>
+                        </div>
+                        <div class="aid-card">
+                            <h5>🦁 Zoological Parks</h5>
+                            <p>Places where live animals are kept in a protected environment, allowing us to study their
+                                food habits and behaviour.</p>
+                        </div>
+                        <div class="aid-card">
+                            <h5>🔑 Key</h5>
+                            <p>A tool for identifying plants and animals based on similarities and dissimilarities —
+                                usually
+                                analytical, made of contrasting statements called <i>couplets</i>. Each statement is a
+                                <i>lead</i>. Keys are usually <b>dichotomous</b>, and a separate key is needed for each
+                                taxonomic category.
+                            </p>
+                        </div>
+                        <div class="aid-card">
+                            <h5>📖 Manuals, Monographs, Catalogues &amp; Floras</h5>
+                            <p><b>Flora:</b> the actual account of habitat and distribution of plants in a given area.
+                                <b>Manuals:</b> help identify species found in an area. <b>Monographs:</b> contain
+                                information on any one taxon. <b>Catalogues:</b> give correct scientific names and
+                                citations, with authors' names.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="divider">
+                    <svg viewBox="0 0 180 24">
+                        <path d="M0 12 Q 20 24, 40 12 T 80 12 T 120 12 T 160 12 T 200 12" stroke="#A9862F"
+                            stroke-width="2" fill="none" />
+                        <circle cx="60" cy="12" r="3" fill="#3F5C3A" />
+                        <circle cx="140" cy="12" r="3" fill="#B5502E" />
+                    </svg>
+                </div>
+
+                <section class="notesec" id="s7">
+                    <div class="sec-head"><span class="sec-num">§7</span>
+                        <h3 class="sh">Quick Recap</h3>
+                    </div>
+                    <ol>
+                        <li>Growth, reproduction, metabolism, cellular organisation, and consciousness together
+                            characterise
+                            "living" — no single feature is sufficient alone.</li>
+                        <li>Taxonomy = classifying, naming, and identifying organisms; systematics also considers
+                            evolutionary relationships.</li>
+                        <li>Binomial nomenclature (Linnaeus): genus + specific epithet, italicised, genus capitalised,
+                            epithet lower-case, followed by author abbreviation.</li>
+                        <li>Taxonomic hierarchy, broadest to narrowest: Kingdom → Phylum/Division → Class → Order →
+                            Family →
+                            Genus → Species.</li>
+                        <li>Species is the fundamental/basic unit of classification.</li>
+                        <li>Taxonomical aids: herbarium, botanical gardens, museums, zoological parks, keys, manuals,
+                            monographs, catalogues, and floras.</li>
+                    </ol>
+
+                    <div class="sources">
+                        Source material: NCERT Biology Textbook, Class XI, Unit 1 — "The Living World"
+                        (NCERT/NTA-aligned
+                        NEET syllabus). Illustrations on this page are original line drawings, not reproductions.
+                    </div>
+                </section>
+
+                <div class="mark-done-bar">
+                    <p>Finished reading? Log today's study, then test yourself.</p>
+                    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                        <button class="btn outline" onclick="markToday()">Mark today's study done</button>
+                        <button class="btn rust" onclick="startQuiz()">Take the quiz →</button>
+                    </div>
+                </div>
+            </div><!-- /chbody-living-world -->
+
+            <div class="chapter-body" id="chbody-biological-classification" hidden>
+                <div class="chap-hero">
+                    <div class="eyebrow">Unit 1 · Class XI · Chapter 02</div>
+                    <h2>Biological Classification</h2>
+                    <p class="sub">From two kingdoms to five (and beyond) — how Whittaker's system sorts Monera,
+                        Protista,
+                        Fungi, Plantae and Animalia, plus the strange, borderline case of viruses.</p>
+                </div>
+
+                <div class="divider">
+                    <svg viewBox="0 0 180 24">
+                        <path d="M0 12 Q 20 0, 40 12 T 80 12 T 120 12 T 160 12 T 200 12" stroke="#3F5C3A"
+                            stroke-width="2" fill="none" />
+                        <circle cx="40" cy="12" r="3" fill="#B5502E" />
+                        <circle cx="120" cy="12" r="3" fill="#A9862F" />
+                    </svg>
+                </div>
+
+                <section class="notesec" id="bc-s1">
+                    <div class="sec-head"><span class="sec-num">§1</span>
+                        <h3 class="sh">Why the Two-Kingdom System Failed</h3>
+                    </div>
+                    <p>Linnaeus's original <span class="term">two kingdom classification</span> placed all organisms
+                        into
+                        <b>Plantae</b> or <b>Animalia</b>, based mainly on whether they were mobile, how they got
+                        nutrition,
+                        and whether they had a cell wall. It worked reasonably well for large, familiar organisms — but
+                        it
+                        broke down for the microscopic world.
+                    </p>
+                    <div class="callout"><b>Problem:</b> the two-kingdom system did not distinguish between
+                        <b>eukaryotes
+                            and prokaryotes</b>, <b>unicellular and multicellular</b> organisms, or <b>photosynthetic
+                            (autotrophic) and non-photosynthetic (heterotrophic)</b> organisms. Fungi, for instance,
+                        don't
+                        fit comfortably into either "plant" or "animal."</div>
+                    <p>This is why newer systems of classification were proposed — most influentially, <b>R. H.
+                            Whittaker's Five Kingdom Classification (1969)</b>.</p>
+                </section>
+
+                <section class="notesec" id="bc-s2">
+                    <div class="sec-head"><span class="sec-num">§2</span>
+                        <h3 class="sh">Whittaker's Five Kingdom System</h3>
+                    </div>
+                    <p>Whittaker's classification uses five criteria to place organisms: <span class="term">cell
+                            structure</span>, <span class="term">body organisation</span>, <span class="term">mode of
+                            nutrition</span>, <span class="term">reproduction</span>, and <span
+                            class="term">phylogenetic
+                            relationships</span>. On this basis, all organisms are placed in one of five kingdoms:</p>
+
+                    <div class="ladder">
+                        <div class="rung">
+                            <div class="rank">Monera</div>
+                            <div class="eg">all prokaryotes — bacteria, cyanobacteria, mycoplasma</div>
+                        </div>
+                        <div class="rung">
+                            <div class="rank">Protista</div>
+                            <div class="eg">unicellular eukaryotes — chrysophytes, dinoflagellates, euglenoids, slime
+                                moulds, protozoans</div>
+                        </div>
+                        <div class="rung">
+                            <div class="rank">Fungi</div>
+                            <div class="eg">heterotrophic, chiefly saprophytic eukaryotes with a chitin cell wall</div>
+                        </div>
+                        <div class="rung">
+                            <div class="rank">Plantae</div>
+                            <div class="eg">multicellular, autotrophic eukaryotes with a cellulose cell wall</div>
+                        </div>
+                        <div class="rung">
+                            <div class="rank">Animalia</div>
+                            <div class="eg">multicellular, heterotrophic eukaryotes without a cell wall</div>
+                        </div>
+                    </div>
+                    <div class="callout"><b>NEET tip:</b> Kingdoms Monera and Protista may be autotrophic or
+                        heterotrophic
+                        — nutrition mode alone does not define them; it's cell structure (prokaryotic vs eukaryotic)
+                        plus
+                        body organisation that separates them first.</div>
+                </section>
+
+                <section class="notesec" id="bc-s3">
+                    <div class="sec-head"><span class="sec-num">§3</span>
+                        <h3 class="sh">Kingdom Monera</h3>
+                    </div>
+                    <p>Bacteria are the sole members of Kingdom Monera and the most abundant micro-organisms. They occur
+                        almost everywhere — soil, water, air, hot springs, deep-sea vents, and inside other organisms —
+                        and vary widely in shape: <span class="term">coccus</span> (spherical), <span
+                            class="term">bacillus</span> (rod-shaped), <span class="term">vibrium</span> (comma-shaped),
+                        and <span class="term">spirillum</span> (spiral).</p>
+
+                    <h4 class="sub-h">Archaebacteria vs Eubacteria</h4>
+                    <div class="example-grid">
+                        <div class="spec-card">
+                            <h5>Archaebacteria</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Cell wall</td>
+                                    <td>Distinct chemistry from other bacteria — allows survival in extreme conditions
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Habitat</td>
+                                    <td>Extreme salty areas (halophiles), hot springs (thermoacidophiles), marshy areas
+                                        (methanogens)</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Note</td>
+                                    <td>Methanogens live in the gut of ruminant animals (e.g. cattle) and produce
+                                        methane
+                                        from dung</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="spec-card">
+                            <h5>Eubacteria ("true bacteria")</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Cell wall</td>
+                                    <td>Rigid, and if motile, a flagellum is present</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Types</td>
+                                    <td>Cyanobacteria, chemosynthetic autotrophic bacteria, heterotrophic bacteria</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Note</td>
+                                    <td>Far more common than archaebacteria</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h4 class="sub-h">Three Functional Groups of Eubacteria</h4>
+                    <div class="char-row">
+                        <div class="char-icon">01</div>
+                        <div>
+                            <h4 class="sub-h" style="margin-top:0">Cyanobacteria (blue-green algae)</h4>
+                            <p>Photosynthetic autotrophs with chlorophyll a (like plants); unicellular, colonial, or
+                                filamentous, often found as blooms in fresh water. Many fix atmospheric nitrogen in
+                                specialised cells called <span class="term">heterocysts</span> (e.g. <i>Nostoc</i>,
+                                <i>Anabaena</i>).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="char-row">
+                        <div class="char-icon">02</div>
+                        <div>
+                            <h4 class="sub-h" style="margin-top:0">Chemosynthetic autotrophic bacteria</h4>
+                            <p>Oxidise inorganic substances such as nitrates, nitrites, and ammonia to obtain energy for
+                                their ATP production, and use this energy to make their own food. They play a vital role
+                                in recycling nutrients like nitrogen, phosphorus, and iron.</p>
+                        </div>
+                    </div>
+                    <div class="char-row">
+                        <div class="char-icon">03</div>
+                        <div>
+                            <h4 class="sub-h" style="margin-top:0">Heterotrophic bacteria</h4>
+                            <p>The most abundant of all — mostly decomposers, important as fermenters, nitrogen fixers,
+                                or
+                                pathogens causing diseases like cholera, typhoid, tetanus, and citrus canker.</p>
+                        </div>
+                    </div>
+
+                    <div class="callout"><b>Bacterial reproduction:</b> mainly by fission; under unfavourable
+                        conditions,
+                        bacteria produce spores to withstand extremes. <b>Genetic recombination</b> is also shown, via a
+                        primitive sex-like process.</div>
+
+                    <h4 class="sub-h">Mycoplasma</h4>
+                    <p>Organisms that completely lack a cell wall and are the smallest living cells known — they can
+                        survive without oxygen. Many are pathogenic in animals and plants.</p>
+                </section>
+
+                <section class="notesec" id="bc-s4">
+                    <div class="sec-head"><span class="sec-num">§4</span>
+                        <h3 class="sh">Kingdom Protista</h3>
+                    </div>
+                    <p>All single-celled eukaryotes are placed here. Protists form a link with other eukaryotic kingdoms
+                        (Fungi, Plantae, Animalia) — most have flagella or cilia at some stage, and reproduce both
+                        asexually
+                        and sexually via cell fusion and zygote formation.</p>
+
+                    <div class="aid-grid">
+                        <div class="aid-card">
+                            <h5>🟡 Chrysophytes</h5>
+                            <p>Includes diatoms and golden algae (desmids); mostly found in fresh water and marine
+                                environments. Cell walls form two thin overlapping shells that fit together like a soap
+                                box — indestructible, leaving behind "diatomaceous earth" deposits.</p>
+                        </div>
+                        <div class="aid-card">
+                            <h5>🔴 Dinoflagellates</h5>
+                            <p>Mostly marine and photosynthetic, with two flagella (one longitudinal, one transverse)
+                                lying
+                                in furrows on the body. Cell wall has stiff cellulose plates. Rapid multiplication
+                                causes
+                                "red tides" (e.g. <i>Gonyaulax</i>) that can turn the sea red/orange and release toxins
+                                harmful to fish.</p>
+                        </div>
+                        <div class="aid-card">
+                            <h5>🟢 Euglenoids</h5>
+                            <p>Mostly fresh-water organisms found in stagnant water; no cell wall, instead a
+                                protein-rich
+                                layer called a <span class="term">pellicle</span>, making them flexible. Have two
+                                flagella
+                                (one short, one long). Autotrophic in light, but heterotrophic when deprived of sunlight
+                                —
+                                e.g. <i>Euglena</i>.</p>
+                        </div>
+                        <div class="aid-card">
+                            <h5>🟠 Slime Moulds</h5>
+                            <p>Saprophytic protists that produce spores for reproduction. The body moves along decaying
+                                twigs/leaves engulfing organic material as an aggregation called a <span
+                                    class="term">plasmodium</span>, which grows and fragments under favourable
+                                conditions to form fruiting bodies bearing spores with true walls.</p>
+                        </div>
+                    </div>
+
+                    <h4 class="sub-h">Protozoans — all heterotrophic, living as predators or parasites</h4>
+                    <div class="example-grid">
+                        <div class="spec-card">
+                            <h5>Amoeboid protozoans</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Locomotion</td>
+                                    <td>Pseudopodia</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Habitat</td>
+                                    <td>Fresh water, sea water, moist soil</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Example</td>
+                                    <td><i>Amoeba</i>, <i>Entamoeba</i> (marine forms have silica shells)</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="spec-card">
+                            <h5>Flagellated protozoans</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Locomotion</td>
+                                    <td>Flagella</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Habitat</td>
+                                    <td>Free-living or parasitic</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Example</td>
+                                    <td><i>Trypanosoma</i> — causes African sleeping sickness</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="spec-card">
+                            <h5>Ciliated protozoans</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Locomotion</td>
+                                    <td>Thousands of cilia for movement and feeding</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Habitat</td>
+                                    <td>Aquatic, actively moving</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Example</td>
+                                    <td><i>Paramoecium</i> — has a gullet that opens to the outside via a cell mouth
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="spec-card">
+                            <h5>Sporozoans</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Locomotion</td>
+                                    <td>None — a diverse group with an infectious spore-like stage</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Habitat</td>
+                                    <td>Parasitic</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Example</td>
+                                    <td><i>Plasmodium</i> (malarial parasite) — <b>very high-yield for NEET</b></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="notesec" id="bc-s5">
+                    <div class="sec-head"><span class="sec-num">§5</span>
+                        <h3 class="sh">Kingdom Fungi</h3>
+                    </div>
+                    <p>Fungi are heterotrophic, chiefly saprophytic organisms that grow as mycelia made of thread-like
+                        hyphae. Their cell walls are made of <span class="term">chitin</span> (not cellulose), and most
+                        are multicellular except yeast, which is unicellular. Some are parasitic and live off living
+                        plants and animals; some are symbionts, living with algae as <span class="term">lichens</span>
+                        or
+                        with plant roots as <span class="term">mycorrhiza</span>.</p>
+
+                    <div class="callout"><b>Habitat:</b> fungi are cosmopolitan and live in air, water, soil, and on
+                        animals and plants; they prefer warm and humid places (this is why bread, leather, and pickles
+                        are more easily spoiled in the rainy season).</div>
+
+                    <h4 class="sub-h">Reproduction</h4>
+                    <p>Occurs by vegetative means (fragmentation, fission, budding), asexual means (spores called <span
+                            class="term">conidia</span> or <span class="term">sporangiospores</span>), and sexual means
+                        (oospores, ascospores, basidiospores). Sexual reproduction has three distinct stages: <span
+                            class="term">plasmogamy</span> (fusion of protoplasms), <span class="term">karyogamy</span>
+                        (fusion of two nuclei), and <span class="term">meiosis</span> in the zygote to restore the
+                        haploid
+                        number.</p>
+
+                    <h4 class="sub-h">Classes of Fungi</h4>
+                    <div class="example-grid">
+                        <div class="spec-card">
+                            <h5>Phycomycetes</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Habitat</td>
+                                    <td>Aquatic, decaying wood, moist places, obligate parasites on plants</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Mycelium</td>
+                                    <td>Aseptate and coenocytic</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Example</td>
+                                    <td><i>Mucor</i>, <i>Rhizopus</i> (bread mould), <i>Albugo</i></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="spec-card">
+                            <h5>Ascomycetes ("sac fungi")</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Habitat</td>
+                                    <td>Mostly multicellular, some unicellular (yeast); decomposers, saprophytes,
+                                        parasitic,
+                                        coprophilous</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Spores</td>
+                                    <td>Sexual spores called <b>ascospores</b> produced endogenously in sac-like asci
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Example</td>
+                                    <td><i>Saccharomyces</i> (yeast), <i>Neurospora</i>, <i>Penicillium</i></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="spec-card">
+                            <h5>Basidiomycetes</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Habitat</td>
+                                    <td>Soil, logs, tree stumps, living plant bodies (rusts and smuts)</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Spores</td>
+                                    <td>Sex organs absent; produce <b>basidiospores</b> exogenously on a basidium</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Example</td>
+                                    <td>Mushrooms (<i>Agaricus</i>), bracket fungi, puffballs</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="spec-card">
+                            <h5>Deuteromycetes ("imperfect fungi")</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Habitat</td>
+                                    <td>Reproduce only by asexual spores called <b>conidia</b>; sexual stage
+                                        unknown/absent
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Note</td>
+                                    <td>Once a sexual stage is discovered, they're moved to the appropriate class</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Example</td>
+                                    <td><i>Alternaria</i>, <i>Colletotrichum</i>, <i>Trichoderma</i></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h4 class="sub-h">Lichens &amp; Mycorrhiza — symbiotic associations</h4>
+                    <p><span class="term">Lichens</span> are a symbiotic association between algae (the phycobiont,
+                        which
+                        prepares food) and fungi (the mycobiont, which provides shelter and absorbs water/minerals).
+                        They
+                        are excellent <b>pollution indicators</b> — they do not grow in polluted areas. <span
+                            class="term">Mycorrhiza</span> is a symbiotic association between fungi and the roots of
+                        higher plants — the fungi help absorb water and minerals, while the plant provides sugars and
+                        nitrogenous compounds.</p>
+                </section>
+
+                <section class="notesec" id="bc-s6">
+                    <div class="sec-head"><span class="sec-num">§6</span>
+                        <h3 class="sh">Kingdoms Plantae &amp; Animalia — a Quick Preview</h3>
+                    </div>
+                    <p>Both kingdoms are eukaryotic and multicellular, but differ sharply in nutrition and structure —
+                        these two kingdoms are explored in full in the next two NCERT chapters (Plant Kingdom and Animal
+                        Kingdom).</p>
+                    <div class="example-grid">
+                        <div class="spec-card">
+                            <h5>Plantae</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Nutrition</td>
+                                    <td>Autotrophic (photosynthetic), a few partially heterotrophic (insectivorous,
+                                        parasitic)</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Cell wall</td>
+                                    <td>Present — made of cellulose</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Reserve food</td>
+                                    <td>Starch</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="spec-card">
+                            <h5>Animalia</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Nutrition</td>
+                                    <td>Heterotrophic — holozoic (ingestion)</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Cell wall</td>
+                                    <td>Absent</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Reserve food</td>
+                                    <td>Glycogen</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="notesec" id="bc-s7">
+                    <div class="sec-head"><span class="sec-num">§7</span>
+                        <h3 class="sh">Viruses, Viroids &amp; Prions — Outside All Five Kingdoms</h3>
+                    </div>
+                    <p>Viruses are so different from typical cellular organisms that Whittaker's system does not include
+                        them at all — they are <b>acellular and obligate parasites</b>, non-living outside a host cell
+                        yet
+                        capable of "hijacking" host machinery to replicate inside it.</p>
+                    <p><b>D. J. Ivanowsky (1892)</b> first reported a contagion smaller than bacteria that caused the
+                        tobacco mosaic disease, passing through a bacteria-proof filter. <b>M. W. Beijerinck (1898)</b>
+                        showed the fluid was infectious only when it could multiply within living cells, and named it
+                        <span class="term">contagium vivum fluidum</span> (contagious living fluid). <b>W. M. Stanley
+                            (1935)</b> showed that viruses could be crystallised, and that crystals consist largely of
+                        protein.
+                    </p>
+
+                    <div class="callout"><b>Structure:</b> a virus has a protein coat, called a <span
+                            class="term">capsid</span>, made of small subunits called <span
+                            class="term">capsomeres</span>. The capsid encloses genetic material — <b>either DNA or RNA,
+                            never both</b> — which may be single- or double-stranded.</div>
+
+                    <div class="aid-grid">
+                        <div class="aid-card">
+                            <h5>🦠 Viroids (T. O. Diener, 1971)</h5>
+                            <p>Smaller than viruses; consist of free RNA only, with <b>no protein coat</b> at all. The
+                                RNA has low molecular weight. Discovered while working on potato spindle tuber disease.
+                            </p>
+                        </div>
+                        <div class="aid-card">
+                            <h5>🧬 Prions</h5>
+                            <p>Abnormally folded <b>proteins</b> (no nucleic acid at all) that cause serious
+                                neurological
+                                diseases in mammals, such as <b>bovine spongiform encephalopathy</b> ("mad cow disease")
+                                and its human variant, Creutzfeldt–Jakob disease (CJD).</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="divider">
+                    <svg viewBox="0 0 180 24">
+                        <path d="M0 12 Q 20 24, 40 12 T 80 12 T 120 12 T 160 12 T 200 12" stroke="#A9862F"
+                            stroke-width="2" fill="none" />
+                        <circle cx="60" cy="12" r="3" fill="#3F5C3A" />
+                        <circle cx="140" cy="12" r="3" fill="#B5502E" />
+                    </svg>
+                </div>
+
+                <section class="notesec" id="bc-s8">
+                    <div class="sec-head"><span class="sec-num">§8</span>
+                        <h3 class="sh">Quick Recap</h3>
+                    </div>
+                    <ol>
+                        <li>Two-kingdom system failed because it didn't separate prokaryote/eukaryote, unicellular/
+                            multicellular, or autotroph/heterotroph.</li>
+                        <li>Whittaker's Five Kingdom system (1969): Monera, Protista, Fungi, Plantae, Animalia — based
+                            on
+                            cell structure, body organisation, nutrition, reproduction, phylogeny.</li>
+                        <li>Monera = all prokaryotes; split into archaebacteria (extremophiles) and eubacteria
+                            (cyanobacteria, chemosynthetic, heterotrophic).</li>
+                        <li>Protista = unicellular eukaryotes: chrysophytes, dinoflagellates, euglenoids, slime moulds,
+                            protozoans (amoeboid, flagellated, ciliated, sporozoan).</li>
+                        <li>Fungi = heterotrophic, chitin cell wall; classes Phycomycetes, Ascomycetes, Basidiomycetes,
+                            Deuteromycetes; lichens (fungus + alga) and mycorrhiza (fungus + root) are symbioses.</li>
+                        <li>Viruses are acellular, contain either DNA or RNA (never both) enclosed in a capsid; viroids
+                            have RNA with no protein coat; prions are infectious proteins with no nucleic acid.</li>
+                    </ol>
+
+                    <div class="sources">
+                        Source material: NCERT Biology Textbook, Class XI, Unit 1 — "Biological Classification"
+                        (NCERT/NTA-aligned NEET syllabus). Illustrations on this page are original line drawings, not
+                        reproductions.
+                    </div>
+                </section>
+
+                <div class="mark-done-bar">
+                    <p>Finished reading? Log today's study, then test yourself.</p>
+                    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                        <button class="btn outline" onclick="markToday()">Mark today's study done</button>
+                        <button class="btn rust" onclick="startQuiz()">Take the quiz →</button>
+                    </div>
+                </div>
+            </div><!-- /chbody-biological-classification -->
+
+            <div class="chapter-body" id="chbody-cell-unit-of-life" hidden>
+                <div class="chap-hero">
+                    <div class="eyebrow">Unit 3 · Class XI · Chapter 08</div>
+                    <h2>Cell: The Unit of Life</h2>
+                    <p class="sub">Every organism is built from cells — from the cell theory to the machinery inside a
+                        single eukaryotic cell: membranes, organelles, and the nucleus that runs the show.</p>
+                </div>
+
+                <div class="divider">
+                    <svg viewBox="0 0 180 24">
+                        <path d="M0 12 Q 20 0, 40 12 T 80 12 T 120 12 T 160 12 T 200 12" stroke="#3F5C3A"
+                            stroke-width="2" fill="none" />
+                        <circle cx="40" cy="12" r="3" fill="#B5502E" />
+                        <circle cx="120" cy="12" r="3" fill="#A9862F" />
+                    </svg>
+                </div>
+
+                <section class="notesec" id="cu-s1">
+                    <div class="sec-head"><span class="sec-num">§1</span>
+                        <h3 class="sh">The Cell Theory</h3>
+                    </div>
+                    <p><b>Robert Hooke</b> first observed and named "cells" in 1665, while examining a thin slice of
+                        cork
+                        under a self-designed microscope — the boxes he saw were actually dead cell walls. Building on
+                        decades of microscopy by scientists like Purkinje and von Mohl, <b>Schleiden (1838)</b>, a
+                        botanist, and <b>Schwann (1839)</b>, a zoologist, together proposed the <span class="term">cell
+                            theory</span>, later expanded by <b>Rudolf Virchow (1855)</b>.</p>
+
+                    <div class="callout"><b>Cell Theory (final form):</b>
+                        <br>1. All living organisms are composed of cells and products of cells.
+                        <br>2. The cell is the basic structural and functional unit of life.
+                        <br>3. All cells arise from pre-existing cells (<i>Omnis cellula e cellula</i> — Virchow).
+                    </div>
+
+                    <p>Cells vary enormously in shape and size — from a mycoplasma just 0.3 μm long, to a single ostrich
+                        egg (the largest isolated single cell), to the longest cell being a nerve cell. Cell size and
+                        shape are usually linked to specific functions.</p>
+                </section>
+
+                <section class="notesec" id="cu-s2">
+                    <div class="sec-head"><span class="sec-num">§2</span>
+                        <h3 class="sh">Prokaryotic vs Eukaryotic Cells</h3>
+                    </div>
+                    <p>All cells share three common features: a <span class="term">plasma membrane</span> as the
+                        outer-most boundary, a <span class="term">nucleus or nucleoid</span> containing genetic
+                        material,
+                        and <span class="term">cytoplasm</span>. Based on nuclear organisation, all organisms are
+                        grouped
+                        into two broad categories: <b>prokaryotes</b> and <b>eukaryotes</b>.</p>
+
+                    <div class="example-grid">
+                        <div class="spec-card">
+                            <h5>Prokaryotic cell</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Nucleus</td>
+                                    <td>Absent — genetic material lies in an unbound region: the <b>nucleoid</b></td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Size</td>
+                                    <td>Generally smaller (0.1–5.0 μm) than eukaryotic cells</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Organelles</td>
+                                    <td>Membrane-bound organelles absent; only ribosomes present (70S)</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Examples</td>
+                                    <td>Bacteria, cyanobacteria, mycoplasma, PPLO</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="spec-card">
+                            <h5>Eukaryotic cell</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Nucleus</td>
+                                    <td>Present — a well-defined nucleus bound by a nuclear envelope</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Size</td>
+                                    <td>Generally larger (5–100 μm)</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Organelles</td>
+                                    <td>Membrane-bound organelles present (ER, Golgi, mitochondria, etc.); ribosomes 80S
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Examples</td>
+                                    <td>Protists, fungi, plants, animals</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h4 class="sub-h">Structure of a Prokaryotic Cell</h4>
+                    <p>Besides the nucleoid, prokaryotic cells may possess a loose circular DNA called a <span
+                            class="term">plasmid</span>, which confers special phenotypic traits like antibiotic
+                        resistance — used heavily in genetic engineering. Additional surface structures include:</p>
+                    <div class="char-row">
+                        <div class="char-icon">01</div>
+                        <div>
+                            <h4 class="sub-h" style="margin-top:0">Glycocalyx</h4>
+                            <p>May be a loose slime layer or a
+                                thick, tough <b>capsule</b> outside the cell wall.</p>
+                        </div>
+                    </div>
+                    <div class="char-row">
+                        <div class="char-icon">02</div>
+                        <div>
+                            <h4 class="sub-h" style="margin-top:0">Cell wall &amp; plasma membrane</h4>
+                            <p>The cell wall
+                                gives shape; beneath it, the plasma membrane is closely surrounded by it, together
+                                called
+                                the <span class="term">cell envelope</span>.</p>
+                        </div>
+                    </div>
+                    <div class="char-row">
+                        <div class="char-icon">03</div>
+                        <div>
+                            <h4 class="sub-h" style="margin-top:0">Flagella, pili &amp; fimbriae</h4>
+                            <p>Flagella are
+                                locomotory; pili and fimbriae don't aid movement but help attachment to surfaces or to
+                                other cells for DNA transfer (conjugation).</p>
+                        </div>
+                    </div>
+                    <div class="char-row">
+                        <div class="char-icon">04</div>
+                        <div>
+                            <h4 class="sub-h" style="margin-top:0">Ribosomes &amp; inclusion bodies</h4>
+                            <p>70S
+                                ribosomes, made of 50S + 30S subunits, occur in large numbers attached to the plasma
+                                membrane and are the sites of protein synthesis. Reserve material is stored in inclusion
+                                bodies (e.g. phosphate granules, gas vacuoles).</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="notesec" id="cu-s3">
+                    <div class="sec-head"><span class="sec-num">§3</span>
+                        <h3 class="sh">Cell Envelope &amp; the Plasma Membrane</h3>
+                    </div>
+                    <p>In eukaryotic cells too, the <span class="term">cell envelope</span> consists of the cell
+                        membrane, and (in plants, fungi, bacteria) a cell wall lying just outside it. The <span
+                            class="term">plasma membrane</span> is universal to all cells and is selectively
+                        permeable, controlling what moves in and out.</p>
+
+                    <div class="callout"><b>Fluid Mosaic Model (Singer &amp; Nicolson, 1972):</b> the widely accepted
+                        model
+                        for membrane structure. Membrane lipids (phospholipids) are arranged in a bilayer, quasi-fluid,
+                        allowing lateral movement of proteins within it — hence "fluid." The membrane proteins are of
+                        two
+                        main types, <b>integral</b> (embedded partially or wholly) and <b>peripheral</b> (lying on the
+                        surface).</div>
+
+                    <h4 class="sub-h">Cell Wall</h4>
+                    <p>Present in plant cells and fungi (but not animal cells), lying outside the plasma membrane. Made
+                        mainly of <b>cellulose</b> in plants; also contains other polysaccharides, proteins. Provides
+                        structural strength, protects the protoplasm, and (along with the middle lamella made of calcium
+                        pectate) helps cells stick together. Cell walls also facilitate a special mode of transport
+                        called
+                        <span class="term">plasmodesmata</span>, which connects the cytoplasm of adjacent cells.
+                    </p>
+                </section>
+
+                <section class="notesec" id="cu-s4">
+                    <div class="sec-head"><span class="sec-num">§4</span>
+                        <h3 class="sh">The Endomembrane System</h3>
+                    </div>
+                    <p>Organelles whose functions are coordinated (though structurally different) form the <span
+                            class="term">endomembrane system</span>: the endoplasmic reticulum, Golgi apparatus,
+                        lysosomes,
+                        and vacuoles. Mitochondria, chloroplasts, and peroxisomes are <b>not</b> part of this system
+                        since
+                        their functions aren't coordinated with the others.</p>
+
+                    <div class="aid-grid">
+                        <div class="aid-card">
+                            <h5>🕸️ Endoplasmic Reticulum (ER)</h5>
+                            <p>A network of membranous tubules and cisternae, dividing the cytoplasm into
+                                compartments. <b>Rough ER (RER)</b> bears ribosomes on its surface and is active in
+                                protein synthesis and secretion. <b>Smooth ER (SER)</b> lacks ribosomes and is the
+                                principal site for lipid/steroid synthesis.</p>
+                        </div>
+                        <div class="aid-card">
+                            <h5>📦 Golgi Apparatus (Camillo Golgi, 1898)</h5>
+                            <p>Made of flattened, membrane-bound sacs called <span class="term">cisternae</span> stacked
+                                parallel to each other, with a <b>cis face</b> (forming face, near ER) and a <b>trans
+                                    face</b> (maturing face). Its major function is packaging materials, often
+                                synthesised by the ER, into vesicles for secretion — hence "packaging and dispatch."</p>
+                        </div>
+                        <div class="aid-card">
+                            <h5>💧 Lysosomes</h5>
+                            <p>Membrane-bound vesicular structures formed by the Golgi apparatus, containing powerful
+                                hydrolytic enzymes (lipases, proteases, carbohydrases) active in acidic conditions,
+                                capable of breaking down almost all organic material — hence called "suicide bags" of
+                                the
+                                cell, since they can also digest the cell itself under abnormal conditions.</p>
+                        </div>
+                        <div class="aid-card">
+                            <h5>🫧 Vacuoles</h5>
+                            <p>Membrane-bound (by a single membrane called the <span class="term">tonoplast</span>)
+                                spaces in the cytoplasm containing water, sap, excretory products, and other materials.
+                                In
+                                plants, the vacuole may occupy up to 90% of cell volume, providing turgidity and
+                                rigidity.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="notesec" id="cu-s5">
+                    <div class="sec-head"><span class="sec-num">§5</span>
+                        <h3 class="sh">Mitochondria &amp; Plastids — the "Power Houses"</h3>
+                    </div>
+                    <p><b>Mitochondria</b> (discovered by Kolliker) are membrane-bound structures found in almost all
+                        eukaryotic cells, with a double membrane — the outer smooth, the inner folded into <span
+                            class="term">cristae</span> which increase surface area for ATP generation. Since ATP is the
+                        energy currency of the cell, mitochondria are called the <b>"power houses"</b> of the cell. They
+                        are <span class="term">semi-autonomous</span>: they contain their own circular DNA, RNA, and
+                        ribosomes (70S), allowing them to divide by fission and synthesise some of their own proteins.
+                    </p>
+
+                    <p><b>Plastids</b> are found in all plant cells and in euglenoids, and also have a double-membrane
+                        envelope with their own DNA and ribosomes.</p>
+                    <div class="example-grid">
+                        <div class="spec-card">
+                            <h5>Chloroplasts</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Pigments</td>
+                                    <td>Chlorophyll a &amp; b, carotenoids</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Function</td>
+                                    <td>Site of photosynthesis</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Structure</td>
+                                    <td>Grana (stacks of thylakoids) embedded in the
+                                        stroma</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="spec-card">
+                            <h5>Chromoplasts</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Pigments</td>
+                                    <td>Fat-soluble carotenoid pigments (carotene,
+                                        xanthophylls)</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Function</td>
+                                    <td>Impart yellow/orange/red colour to flowers and
+                                        fruits</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="spec-card">
+                            <h5>Leucoplasts</h5>
+                            <table>
+                                <tr>
+                                    <td class="rank">Pigments</td>
+                                    <td>Colourless</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">Function</td>
+                                    <td>Store nutrients — <b>amyloplasts</b> (starch),
+                                        <b>elaioplasts</b> (oils/fats), <b>aleuroplasts</b> (proteins)
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="notesec" id="cu-s6">
+                    <div class="sec-head"><span class="sec-num">§6</span>
+                        <h3 class="sh">Ribosomes, the Cytoskeleton &amp; Cell Motility</h3>
+                    </div>
+                    <p><b>Ribosomes</b> were discovered by George Palade and are the site of protein synthesis — found
+                        either freely in the cytoplasm or attached to the ER/nuclear membrane. Prokaryotic ribosomes are
+                        70S (50S + 30S); eukaryotic ribosomes are 80S (60S + 40S), though eukaryotic organelle ribosomes
+                        (mitochondria, chloroplasts) remain 70S — a very common NEET distractor.</p>
+
+                    <p>The <span class="term">cytoskeleton</span> is a network of protein filaments — <b>microtubules,
+                            microfilaments</b>, and <b>intermediate filaments</b> — that maintains cell shape, motility,
+                        and organelle movement, and helps in cell division.</p>
+
+                    <div class="char-row">
+                        <div class="char-icon">01</div>
+                        <div>
+                            <h4 class="sub-h" style="margin-top:0">Cilia &amp; Flagella</h4>
+                            <p>Both are hair-like or
+                                whip-like outgrowths of the cell surface, with the same basic organisation — a bundle of
+                                microtubules arranged as <b>9+2</b> (nine peripheral doublets + two central singlets),
+                                covered by the plasma membrane. Cilia beat rapidly to move fluid/particles past a fixed
+                                cell; flagella have a similar structure but generate propulsive movement of the entire
+                                cell (e.g. sperm).</p>
+                        </div>
+                    </div>
+                    <div class="char-row">
+                        <div class="char-icon">02</div>
+                        <div>
+                            <h4 class="sub-h" style="margin-top:0">Centrosome &amp; Centrioles</h4>
+                            <p>Found in animal
+                                cells (and some fungi/algae) — usually contains two cylindrical structures called <span
+                                    class="term">centrioles</span>, surrounded by amorphous pericentriolar material.
+                                Each centriole has a cartwheel-like array of nine peripheral microtubule triplets — the
+                                centrioles form the basal body of cilia/flagella, and organise the spindle fibres during
+                                cell division.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="notesec" id="cu-s7">
+                    <div class="sec-head"><span class="sec-num">§7</span>
+                        <h3 class="sh">Nucleus &amp; Chromosomes</h3>
+                    </div>
+                    <p>Discovered by <b>Robert Brown (1831)</b>, the nucleus is generally spherical, bound by a double
+                        membrane called the <span class="term">nuclear envelope</span>, perforated by <span
+                            class="term">nuclear pores</span> that allow the exchange of RNA and protein between the
+                        nucleus and cytoplasm. It contains a fibrous network called <span
+                            class="term">nucleoplasm/chromatin</span>, and a dense spherical body — the <span
+                            class="term">nucleolus</span> — which is the site of ribosomal RNA (rRNA) synthesis.</p>
+
+                    <div class="callout"><b>Chromatin vs Chromosomes:</b> chromatin is the loosely-packed, thread-like
+                        form of nuclear material seen during interphase; during cell division, it condenses into
+                        compact, visible <b>chromosomes</b>. Both are made of the same components — DNA and histone
+                        proteins.</div>
+
+                    <h4 class="sub-h">Structure of a Chromosome</h4>
+                    <p>Each chromosome has a primary constriction called the <span class="term">centromere</span>, on
+                        either side of which lie disc-shaped structures called <span class="term">kinetochores</span> —
+                        the sites of attachment of spindle fibres during cell division. Based on the position of the
+                        centromere, chromosomes are classified into four types:</p>
+                    <div class="ladder">
+                        <div class="rung">
+                            <div class="rank">Metacentric</div>
+                            <div class="eg">centromere in the middle, giving two equal arms</div>
+                        </div>
+                        <div class="rung">
+                            <div class="rank">Sub-metacentric</div>
+                            <div class="eg">centromere slightly away from the middle, giving one shorter and one longer
+                                arm</div>
+                        </div>
+                        <div class="rung">
+                            <div class="rank">Acrocentric</div>
+                            <div class="eg">centromere very close to one end, giving one very short and one very long
+                                arm
+                            </div>
+                        </div>
+                        <div class="rung">
+                            <div class="rank">Telocentric</div>
+                            <div class="eg">centromere at the terminal end of the chromosome</div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="divider">
+                    <svg viewBox="0 0 180 24">
+                        <path d="M0 12 Q 20 24, 40 12 T 80 12 T 120 12 T 160 12 T 200 12" stroke="#A9862F"
+                            stroke-width="2" fill="none" />
+                        <circle cx="60" cy="12" r="3" fill="#3F5C3A" />
+                        <circle cx="140" cy="12" r="3" fill="#B5502E" />
+                    </svg>
+                </div>
+
+                <section class="notesec" id="cu-s8">
+                    <div class="sec-head"><span class="sec-num">§8</span>
+                        <h3 class="sh">Quick Recap</h3>
+                    </div>
+                    <ol>
+                        <li>Cell theory (Schleiden, Schwann, Virchow): all organisms are made of cells, the cell is the
+                            basic unit of life, and all cells arise from pre-existing cells.</li>
+                        <li>Prokaryotes lack a true nucleus (have a nucleoid) and membrane-bound organelles; eukaryotes
+                            have both.</li>
+                        <li>The plasma membrane follows the fluid mosaic model (Singer &amp; Nicolson) — a fluid
+                            phospholipid bilayer with integral and peripheral proteins.</li>
+                        <li>Endomembrane system = ER + Golgi apparatus + lysosomes + vacuoles (coordinated function);
+                            mitochondria and plastids are semi-autonomous, with their own DNA and 70S ribosomes.</li>
+                        <li>Cilia/flagella have a 9+2 microtubule arrangement; centrioles have a 9+0 (triplet)
+                            arrangement
+                            and form the basal body.</li>
+                        <li>The nucleus (Robert Brown) contains chromatin, which condenses into chromosomes during
+                            division; centromere position gives four chromosome types — metacentric, sub-metacentric,
+                            acrocentric, telocentric.</li>
+                    </ol>
+
+                    <div class="sources">
+                        Source material: NCERT Biology Textbook, Class XI, Unit 3 — "Cell: The Unit of Life"
+                        (NCERT/NTA-aligned NEET syllabus). Illustrations on this page are original line drawings, not
+                        reproductions.
+                    </div>
+                </section>
+
+                <div class="mark-done-bar">
+                    <p>Finished reading? Log today's study, then test yourself.</p>
+                    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                        <button class="btn outline" onclick="markToday()">Mark today's study done</button>
+                        <button class="btn rust" onclick="startQuiz()">Take the quiz →</button>
+                    </div>
+                </div>
+            </div><!-- /chbody-cell-unit-of-life -->
+
+        </main>
+    </div>
+
+    <!-- =========================================================
+     PAGE 4 — QUIZ
+     ========================================================= -->
+    <div id="page-quiz" hidden>
+        <main>
+            <span class="back-link" onclick="openChapter(currentChapterId)">← back to chapter notes</span>
+            <div class="page-head" style="padding-top:20px;">
+                <div class="eyebrow" id="quiz-eyebrow">Self-check · The Living World</div>
+                <h2 id="quiz-heading">10 Questions, No Peeking</h2>
+                <p class="desc">Pick one option per question, then submit to see your score and the correct answers.</p>
+            </div>
+
+            <div id="quiz-summary-box" hidden class="quiz-summary">
+                <div class="score" id="quiz-score-text">0 / 10</div>
+                <div class="msg" id="quiz-score-msg"></div>
+                <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+                    <button class="btn outline" onclick="retakeQuiz()">Retake quiz</button>
+                    <button class="btn" onclick="go('syllabus')">Back to syllabus</button>
+                </div>
+            </div>
+
+            <div id="quiz-questions"></div>
+
+            <div style="text-align:center; margin-top:24px;">
+                <button class="btn rust" id="submit-quiz-btn" onclick="submitQuiz()">Submit answers</button>
+            </div>
+        </main>
+    </div>
+
+    <footer>ROOT &amp; LEDGER · A DAILY NEET BIOLOGY COMPANION · NOTES BASED ON NCERT BIOLOGY, CLASS XI–XII</footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
